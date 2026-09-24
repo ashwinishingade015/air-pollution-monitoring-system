@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="mr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,8 +22,7 @@
     <section class="p-8 text-center bg-gray-800 border-b border-gray-700">
         <h1 class="text-4xl font-extrabold text-green-400 mb-2">🌱 Welcome to AirPulse</h1>
         <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-6">
-            AirPulse ही एक अत्याधुनिक हवेच्या गुणवत्तेचे मॉनिटरिंग करणारी प्रणाली आहे.<br>
-            ही सिस्टीम शहरातील रिअल-टाईम प्रदुषणाची माहिती देऊन तुमच्या आरोग्याची काळजी घेण्यास मदत करते.
+            AirPulse is an advanced Smart Air Quality Monitoring System designed to track real-time air pollution levels, providing vital insights to protect your health and environment.
         </p>
         <div class="flex justify-center gap-6 text-sm">
             <span class="bg-gray-700 px-4 py-2 rounded-full border border-gray-600">🛰️ Live IoT Tracking</span>
@@ -72,12 +71,12 @@
         </div>
 
         <div id="preventionBox" class="hidden bg-gray-800 p-6 rounded-xl border border-green-500 mb-6">
-            <h3 class="text-xl font-bold text-green-400 mb-2">💡 प्रदुषण कमी करण्यासाठी काय करावे?</h3>
+            <h3 class="text-xl font-bold text-green-400 mb-2">💡 How to Prevent & Reduce Air Pollution?</h3>
             <ul class="list-disc list-inside text-gray-300 space-y-2">
-                <li>सार्वजनिक वाहतूक यंत्रणेचा (Public Transport) वापर वाढवा.</li>
-                <li>कमी अंतरासाठी सायकल किंवा पायी जाण्याचा पर्याय निवडा.</li>
-                <li>कचरा आणि प्लास्टिक उघड्यावर जाळणे पूर्णपणे थांबवा.</li>
-                <li>जास्तीत जास्त झाडे लावा आणि त्यांचे संगोपन करा.</li>
+                <li>Use public transportation, carpool, or ride a bicycle instead of driving solo.</li>
+                <li>Avoid burning garbage, leaves, or plastic in open spaces.</li>
+                <li>Plant more trees in your neighborhood and support local green initiatives.</li>
+                <li>Switch to energy-efficient appliances and reduce energy consumption.</li>
             </ul>
         </div>
     </section>
@@ -87,13 +86,13 @@
         <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 mb-8">
             <h3 class="text-xl font-bold mb-2 text-yellow-400">🏥 Possible Health Risks</h3>
             <p id="healthRiskMsg" class="text-gray-300">
-                मध्यम स्वरूपाच्या प्रदुषणामुळे श्वासोच्छवासाचा त्रास असलेल्या व्यक्तींना आणि लहान मुलांना थकवा किंवा खोकल्याचा त्रास होऊ शकतो. बाहेर पडताना मास्क वापरा.
+                Moderate air quality may cause respiratory discomfort for sensitive groups, including children and asthma patients. Consider wearing a mask outdoors.
             </p>
         </div>
 
         <div class="bg-green-900/40 p-6 rounded-xl border border-green-500/50">
             <h2 class="text-2xl font-bold text-green-400 mb-1">🎉 Thank You!</h2>
-            <p class="text-gray-300">AirPulse प्रणाली वापरल्याबद्दल धन्यवाद. स्वच्छ हवा, निरोगी जीवन!</p>
+            <p class="text-gray-300">Thank you for using AirPulse! Stay safe and breathe clean air.</p>
         </div>
     </section>
 
@@ -103,10 +102,10 @@
 
     <script>
         const cityData = {
-            'Sangli': { aqi: 112, status: 'Moderate Air Quality', color: 'bg-yellow-500', alert: false, risk: 'दम्याचा त्रास असलेल्यांनी जास्त वेळ बाहेर थांबणे टाळावे.' },
-            'Mumbai': { aqi: 185, status: 'Unhealthy Air Quality', color: 'bg-orange-500', alert: true, risk: 'हवेत प्रदुषकांचे प्रमाण जास्त आहे. मास्क वापरणे बंधनकारक आहे.' },
-            'Pune': { aqi: 85, status: 'Good Air Quality', color: 'bg-green-500', alert: false, risk: 'हवेचा दर्जा चांगला आहे. आरोग्याला कोणताही धोका नाही.' },
-            'Delhi': { aqi: 320, status: 'Hazardous Condition', color: 'bg-red-600', alert: true, risk: 'अतिधोकादायक हवा! बाहेर जाणे टाळा, घरातच सुरक्षित राहा.' }
+            'Sangli': { aqi: 112, status: 'Moderate Air Quality', color: 'bg-yellow-500', alert: false, risk: 'Sensitive groups should limit prolonged outdoor exertion.' },
+            'Mumbai': { aqi: 185, status: 'Unhealthy Air Quality', color: 'bg-orange-500', alert: true, risk: 'High pollution levels. Wearing a protective mask outdoors is recommended.' },
+            'Pune': { aqi: 85, status: 'Good Air Quality', color: 'bg-green-500', alert: false, risk: 'Air quality is satisfactory and poses little or no risk.' },
+            'Delhi': { aqi: 320, status: 'Hazardous Condition', color: 'bg-red-600', alert: true, risk: 'Severe pollution alert! Avoid outdoor activities and stay indoors.' }
         };
 
         function updateCityData() {
@@ -138,9 +137,9 @@
         function checkAlert() {
             const city = document.getElementById('citySelect').value;
             if(cityData[city].alert) {
-                alert("Alert: " + city + " मध्ये प्रदुषण पातळी खूप जास्त आहे!");
+                alert("Alert: High air pollution level detected in " + city + "!");
             } else {
-                alert("Status Normal: " + city + " मध्ये प्रदुषण नियंत्रण पातळीत आहे.");
+                alert("Status Normal: Air quality in " + city + " is within acceptable limits.");
             }
         }
 
